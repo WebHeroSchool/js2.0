@@ -29,13 +29,24 @@ const q = [
     //     }
     // })
 
-buildQuiz = q => {
+// buildQuiz = q => {
+//     q.forEach((item) => {
+//         if (item.answer === item.correctAnswer) {
+//             alert('Верно');
+//         } else {
+//             console.log('Не верно');
+//         }
+//     })
+// }
+// buildQuiz(q);
+let counter = 0;
+showResult = q => {
     q.forEach((item) => {
         if (item.answer === item.correctAnswer) {
-            alert('Верно');
-        } else {
-            console.log('Не верно');
+            counter++;
         }
     })
+    let showAnswer = document.querySelector('.answerCounter');
+    showAnswer.innerHTML = ('Правильных ответов - ' + counter);
 }
-buildQuiz(q);
+showResult(q);
